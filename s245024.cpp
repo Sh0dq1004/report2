@@ -123,12 +123,15 @@ int main(){
     }
     
     std::vector<std::vector<std::string>> labmenbers{{"MathLab"},{"StatisticsLab"},{"ImageLab"},{"ORLab"},{"PhysicsLab"},{"NotAssigned"}};
-    for (size_t i{}; i<vstdat.size(); i++){
+    for (const stdat& s: vstdat){ 
         for (size_t j{};j<Labnames.size();j++){
-            if (vstdat[i].Lab==Labnames[j]) labmenbers[j].push_back(vstdat[i].name+"("+std::to_string(vstdat[i].RankLab)+")");
+            if (s.Lab==Labnames[j]){ 
+                labmenbers[j].push_back(s.name+"("+std::to_string(s.RankLab)+")");
+                break;
+            }
         }
     }
-    for (std::vector<std::string> v: labmenbers){
+    for (const std::vector<std::string>& v: labmenbers){
         fout2 << v;
     }
     return 0;}
