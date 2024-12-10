@@ -95,11 +95,11 @@ int main(){
         std::istringstream iss(line);
         std::string s;
         std::getline(iss,s,',');std::getline(iss,s,',');
-        std::getline(iss,s,',');vstdat[i].first=s;
-        std::getline(iss,s,',');vstdat[i].second=s;
-        std::getline(iss,s,',');vstdat[i].third=s;
-        std::getline(iss,s,',');vstdat[i].fourth=s;
-        std::getline(iss,s,',');vstdat[i].fifth=s;
+        std::getline(iss,vstdat[i].first,',');
+        std::getline(iss,vstdat[i].second,',');
+        std::getline(iss,vstdat[i].third,',');
+        std::getline(iss,vstdat[i].fourth,',');
+        std::getline(iss,vstdat[i].fifth,',');
     }
     for (size_t i{}; i<vstdat.size(); i++){
         std::cout << vstdat[i].id << ',' 
